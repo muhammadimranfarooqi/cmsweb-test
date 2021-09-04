@@ -1,5 +1,5 @@
 #!/bin/bash
-curl -o helm.tar.gz https://get.helm.sh/helm-v3.7.0-rc.2-linux-amd64.tar.gz; mkdir -p helm; tar zxvf helm.tar.gz -C helm; cp helm/linux-amd64/helm /usr/local/bin; rm -rf helm*
+#curl -o helm.tar.gz https://get.helm.sh/helm-v3.7.0-rc.2-linux-amd64.tar.gz; mkdir -p helm; tar zxvf helm.tar.gz -C helm; cp helm/linux-amd64/helm /usr/local/bin; rm -rf helm*
 helm repo add stable https://charts.helm.sh/stable
 helm plugin install https://github.com/chartmuseum/helm-push
 helm repo add --username=${HARBOR_USER} --password=${HARBOR_TOKEN} myrepo  https://registry.cern.ch/chartrepo/cmsweb
