@@ -9,6 +9,7 @@ helm repo update
 helm repo list
 
       set -x
+      pwd
       cd helm
       for chart in $(ls -d */Chart.yaml | xargs dirname); do
           LOCAL_VERSION=$(grep -R "version:" ${chart}/Chart.yaml | awk '{print $2}')
