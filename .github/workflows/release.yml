@@ -14,28 +14,36 @@ jobs:
         with:
           fetch-depth: 0
 
-#      - name: Configure Git
-#        run: |
-#          git config user.name "$GITHUB_ACTOR"
-#          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+      - name: Configure Git
+        run: |
+          git config user.name "$GITHUB_ACTOR"
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
 
-#      - name: Install Helm
-#        uses: azure/setup-helm@v1
-#        with:
-#          version: v3.4.0
+      - name: Install Helm
+        uses: azure/setup-helm@v1
+        with:
+          version: v3.4.0
 
-#      - name: Run chart-releaser
-#        uses: helm/chart-releaser-action@v1.2.1
-#        with:
-#          charts_dir: helm
-#          charts_repo_url: https://muhammadimranfarooqi.github.io/cmsweb-test
-#        env:
-#          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+      - name: Run chart-releaser
+        uses: helm/chart-releaser-action@v1.2.1
+        with:
+          charts_dir: helm
+          charts_repo_url: https://muhammadimranfarooqi.github.io/cmsweb-test
+        env:
+          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
 
-
+  registry:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          
       - name: Run deploy script
         run: ./.github/scripts/deploy.sh
         shell: bash
         env:
           HARBOR_USER: "${{ secrets.HARBOR_USER }}"
-          HARBOR_TOKEN: "${{ secrets.HARBOR_TOKEN }}"          
+          HARBOR_TOKEN: "${{ secrets.HARBOR_TOKEN }}"    
+      
