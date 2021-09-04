@@ -31,3 +31,8 @@ jobs:
           charts_repo_url: https://muhammadimranfarooqi.github.io/cmsweb-test
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+
+
+      - name: Run deploy script
+        run: ./.github/scripts/deploy.sh
+        shell: bash
