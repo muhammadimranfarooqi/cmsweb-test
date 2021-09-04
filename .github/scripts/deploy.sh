@@ -2,6 +2,7 @@
 echo "Current directory" 
 pwd
 ls helm/crabcache
+ls -d helm/*/Chart.yaml
 curl -o helm.tar.gz https://get.helm.sh/helm-v3.7.0-rc.2-linux-amd64.tar.gz; mkdir -p helm; tar zxvf helm.tar.gz -C helm; cp helm/linux-amd64/helm /usr/local/bin; rm -rf helm*
 
 helm repo add stable https://charts.helm.sh/stable
