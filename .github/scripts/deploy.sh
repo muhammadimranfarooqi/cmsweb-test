@@ -10,7 +10,7 @@ helm repo add --username=${HARBOR_USER} --password=${HARBOR_TOKEN} myrepo  https
 helm repo update
 helm repo list
 cd helm
-      for chart in $(ls -d */Chart.yaml | xargs dirname); do
+      for chart in $(ls -d helm/*/Chart.yaml | xargs dirname); do
           LOCAL_VERSION=$(grep -R "version:" ${chart}/Chart.yaml | awk '{print $2}')
           if ! REMOTE_LATEST_VERSION="$(helm search repo myrepo/"${chart}" | grep myrepo/"${chart}" | awk '{print $2}')" ; then
               echo "INFO There are no remote versions."
