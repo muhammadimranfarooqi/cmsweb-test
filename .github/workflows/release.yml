@@ -31,8 +31,8 @@ jobs:
           charts_repo_url: https://muhammadimranfarooqi.github.io/cmsweb-test
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-
-  registry:
+          
+  cern-registry:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
