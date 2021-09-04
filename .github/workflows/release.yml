@@ -36,3 +36,6 @@ jobs:
       - name: Run deploy script
         run: ./.github/scripts/deploy.sh
         shell: bash
+        env:
+          HARBOR_USER: "${{ secrets.HARBOR_USER }}"
+          HARBOR_TOKEN: "${{ secrets.HARBOR_TOKEN }}"          
