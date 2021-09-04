@@ -30,8 +30,7 @@ jobs:
           charts_dir: helm
           charts_repo_url: https://muhammadimranfarooqi.github.io/cmsweb-test
         env:
-          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          
+          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"          
 #  cern-registry:
 #    runs-on: ubuntu-latest
 #    steps:
