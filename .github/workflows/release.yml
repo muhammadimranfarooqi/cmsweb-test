@@ -24,13 +24,13 @@ jobs:
         with:
           version: v3.4.0
 
-      - name: Run chart-releaser
-        uses: helm/chart-releaser-action@v1.2.1
-        with:
-          charts_dir: helm
-          charts_repo_url: https://muhammadimranfarooqi.github.io/cmsweb-test
-        env:
-          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+#      - name: Run chart-releaser
+#        uses: helm/chart-releaser-action@v1.2.1
+#        with:
+#          charts_dir: helm
+#          charts_repo_url: https://muhammadimranfarooqi.github.io/cmsweb-test
+#        env:
+#          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
 
 
       - name: Run deploy script
