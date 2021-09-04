@@ -8,7 +8,6 @@ helm repo add --username=${HARBOR_USER} --password=${HARBOR_TOKEN} myrepo  https
 helm repo update
 helm repo list
 
-      set -x
       pwd
       cd helm
       for chart in $(ls -d */Chart.yaml | xargs dirname); do
