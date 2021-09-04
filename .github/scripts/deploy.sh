@@ -5,7 +5,7 @@ helm plugin install https://github.com/chartmuseum/helm-push
 helm repo add --username=${HARBOR_USER} --password=${HARBOR_TOKEN} myrepo  https://registry.cern.ch/chartrepo/cmsweb
 helm repo update
 helm repo list
-
+cd helm
 for chart in $(ls -d */Chart.yaml | xargs dirname); do
 echo $chart
           LOCAL_VERSION=$(grep -R "version:" ${chart}/Chart.yaml | awk '{print $2}')
